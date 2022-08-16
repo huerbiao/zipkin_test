@@ -1,0 +1,22 @@
+
+syntax = "proto3";
+//protoc --go_out=. --go-grpc_out=. ./hello.proto --go_opt=paths=source_relative --go-grpc_opt=paths=source_relative
+option go_package = "google.golang.org/grpc/zipkin/helloworld";
+option java_multiple_files = true;
+option java_package = "io.grpc.zipkin.hello";
+option java_outer_classname = "HelloProto";
+package helloword;
+
+
+service Hellow{
+  rpc HelloWord(HelloReq) returns (HelloResp){}
+}
+
+message HelloReq{
+  string name = 1;
+}
+
+message HelloResp{
+  string body = 1;
+}
+
